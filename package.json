@@ -1,0 +1,21 @@
+{
+  "name": "simple-json-xhr",
+  "version": "1.0.0",
+  "description": "A simple library for json over XMLHttpRequest",
+  "main": "dist/exports.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duongtdn/simple-json-xhr"
+  },
+  "scripts": {
+    "build": "babel src -d dist",
+    "prepublish": "npm run build"
+  },
+  "author": "duongtdn",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
