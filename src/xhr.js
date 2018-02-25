@@ -6,9 +6,15 @@ function postJSON(endPoint, data, { onSuccess, onFailure }) {
   request.setRequestHeader('Content-Type', 'application/json');
   request.onload = () => {
     if (request.status >= 200 && request.status < 400) {
-      onSuccess(JSON.parse(request.responseText));
+      onSuccess({
+        status: request.status,
+        data: JSON.parse(request.responseText)
+      });
     } else {
-      onFailure(request.responseText);
+      onFailure({
+        status: request.status,
+        err: request.responseText
+      });
     }
   }
   request.send(JSON.stringify(data));
@@ -21,9 +27,15 @@ function getJSON(endPoint, bearer, query, { onSuccess, onFailure }) {
   request.setRequestHeader('Authorization', `Bearer ${bearer}`);
   request.onload = () => {
     if (request.status >= 200 && request.status < 400) {
-      onSuccess(JSON.parse(request.responseText));
+      onSuccess({
+        status: request.status,
+        data: JSON.parse(request.responseText)
+      });
     } else {
-      onFailure(request.responseText);
+      onFailure({
+        status: request.status,
+        err: request.responseText
+      });
     }
   }
   request.send();
