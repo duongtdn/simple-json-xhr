@@ -1,6 +1,6 @@
 {
   "name": "simple-json-xhr",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A simple library for json over XMLHttpRequest",
   "main": "dist/exports.js",
   "repository": {
